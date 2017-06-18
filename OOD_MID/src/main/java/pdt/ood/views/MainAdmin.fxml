@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdt.ood.controllers.AdminController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #0077cc;">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/img-arrow-left.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" onAction="#logout" prefHeight="40.0" prefWidth="200.0" text=" " textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </JFXButton>
+            <Label layoutX="25.0" layoutY="428.0" prefHeight="50.0" prefWidth="151.0" text="  Admin" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/img-user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane fx:id="ac_sta" layoutX="-70.0" layoutY="78.0" prefHeight="40.0" prefWidth="270.0" translateX="70.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8933" height="40.0" layoutX="-10.0" stroke="#ff8933" strokeType="INSIDE" width="60.0" />
+                  <Circle fill="#ff8933" layoutX="50.0" layoutY="20.0" radius="20.0" stroke="#ff8933" strokeType="INSIDE" />
+                  <JFXButton fx:id="btn_sta" alignment="BASELINE_LEFT" contentDisplay="RIGHT" onAction="#loadSta" prefHeight="40.0" prefWidth="270.0" ripplerFill="#52c3fc" text="Thống kê" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="75.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ac_user" layoutX="-70.0" layoutY="118.0" prefHeight="40.0" prefWidth="270.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8933" height="40.0" layoutX="-10.0" stroke="#ff8933" strokeType="INSIDE" width="60.0" />
+                  <Circle fill="#ff8933" layoutX="50.0" layoutY="20.0" radius="20.0" stroke="#ff8933" strokeType="INSIDE" />
+                  <JFXButton fx:id="btn_user" alignment="BASELINE_LEFT" contentDisplay="RIGHT" onAction="#loadMem" prefHeight="40.0" prefWidth="270.0" ripplerFill="#52c3fc" text="Thành viên" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="75.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ac_room" layoutX="-70.0" layoutY="158.0" prefHeight="40.0" prefWidth="270.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8933" height="40.0" layoutX="-10.0" stroke="#ff8933" strokeType="INSIDE" width="60.0" />
+                  <Circle fill="#ff8933" layoutX="50.0" layoutY="20.0" radius="20.0" stroke="#ff8933" strokeType="INSIDE" />
+                  <JFXButton fx:id="btn_room" alignment="BASELINE_LEFT" contentDisplay="RIGHT" onAction="#loadRoom" prefHeight="40.0" prefWidth="270.0" ripplerFill="#52c3fc" text="Phòng hiện hữu" textFill="WHITE" textOverrun="LEADING_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="75.0" right="5.0" top="5.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ac_main" layoutX="200.0" prefHeight="1500.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Separator prefWidth="800.0" />
+            <Separator layoutY="500.0" prefWidth="800.0" />
+            <Separator layoutY="1000.0" prefWidth="800.0" />
+            <AnchorPane prefHeight="500.0" prefWidth="800.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="170.0" text="Thống kê">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="5.0" layoutX="15.0" layoutY="75.0" stroke="#ababab" strokeType="INSIDE" width="770.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="500.0" prefHeight="500.0" prefWidth="800.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="200.0" text="Thành viên">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="5.0" stroke="#ababab" strokeType="INSIDE" width="770.0" x="15.0" y="75.0" />
+                  <JFXButton fx:id="btn_refresh_user" buttonType="RAISED" layoutX="695.0" layoutY="100.0" onAction="#loadListUser" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Làm mới" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_show_addU" buttonType="RAISED" layoutX="595.0" layoutY="460.0" onAction="#showAddUser" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Thêm TV" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <TableView fx:id="tv_user" editable="true" layoutX="15.0" layoutY="150.0" prefHeight="300.0" prefWidth="770.0">
+                    <columns>
+                      <TableColumn fx:id="tc_id_user" prefWidth="83.0" resizable="false" text="ID Thành viên" />
+                      <TableColumn fx:id="tc_name_user" prefWidth="169.0" resizable="false" text="Họ và Tên" />
+                        <TableColumn fx:id="tc_username_user" prefWidth="133.0" resizable="false" text="Tên đăng nhập" />
+                        <TableColumn fx:id="tc_password_user" prefWidth="90.0" resizable="false" text="Mật khẩu" />
+                        <TableColumn fx:id="tc_authority_user" minWidth="5.0" prefWidth="104.0" resizable="false" text="Chức vụ" />
+                        <TableColumn fx:id="tc_function_user" prefWidth="190.0" resizable="false" text="Chức năng" />
+                    </columns>
+                  </TableView>
+                  <JFXComboBox fx:id="filter_user" layoutX="25.0" layoutY="100.0" prefWidth="170.0" />
+                  <JFXTextField fx:id="search_user" layoutX="220.0" layoutY="100.0" prefWidth="170.0" />
+                  <JFXButton fx:id="btn_del_user" buttonType="RAISED" layoutX="695.0" layoutY="460.0" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Xóa TV" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <AnchorPane fx:id="ac_add_user" layoutX="535.0" layoutY="85.0" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #f1f1f1; -fx-border-color: #0077cc;" translateX="275.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="200.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/img-x.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_close_addU" layoutX="200.0" layoutY="20.0" onAction="#closeAddUser" prefHeight="30.0" prefWidth="30.0" text=" ">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXTextField fx:id="txt_reg_name" labelFloat="true" layoutX="25.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Họ và Tên" unFocusColor="BLACK" />
+                        <JFXTextField fx:id="txt_reg_username" labelFloat="true" layoutX="25.0" layoutY="200.0" prefHeight="25.0" prefWidth="200.0" promptText="Tên đăng nhập" />
+                        <JFXPasswordField fx:id="txt_reg_password" labelFloat="true" layoutX="25.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" promptText="Mật khẩu" />
+                        <JFXButton fx:id="btn_add_user" buttonType="RAISED" layoutX="85.0" layoutY="314.0" onAction="#register" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0077cc;" text="Thêm" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label fx:id="lb_mes_user" layoutX="25.0" layoutY="70.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" wrapText="true" />
+                        <Label layoutX="25.0" layoutY="22.0" prefHeight="17.0" prefWidth="151.0" text="Thêm thành viên">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cb_authority" layoutX="25.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="1000.0" prefHeight="500.0" prefWidth="800.0">
+               <children>
+                  <Label layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="260.0" text="Phòng hiện tại">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ababab" height="5.0" stroke="#ababab" strokeType="INSIDE" width="770.0" x="15.0" y="75.0" />
+                  <JFXButton fx:id="btn_add_r" buttonType="RAISED" layoutX="595.0" layoutY="461.0" onAction="#showAddRoom" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Thêm Phòng" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_refresh_r" buttonType="RAISED" layoutX="695.0" layoutY="100.0" onAction="#loadListRoom" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Làm mới" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_join" buttonType="RAISED" layoutX="495.0" layoutY="461.0" onAction="#joinRoom" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Vào phòng" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton fx:id="btn_del_r" buttonType="RAISED" layoutX="695.0" layoutY="461.0" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0077cc;" text="Xóa Phòng" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <AnchorPane fx:id="ac_tv_room" layoutX="15.0" layoutY="150.0" prefHeight="300.0" prefWidth="770.0" />
+                  <JFXComboBox fx:id="filter_room" layoutX="25.0" layoutY="100.0" prefHeight="25.0" prefWidth="170.0" />
+                  <JFXTextField fx:id="search_room" layoutX="220.0" layoutY="100.0" prefHeight="25.0" prefWidth="170.0" />
+                  <AnchorPane fx:id="ac_add_room" layoutX="535.0" layoutY="85.0" prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #f1f1f1; -fx-border-color: #0077cc;" translateX="275.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="200.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/img-x.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="btn_close_addr" layoutX="200.0" layoutY="20.0" onAction="#closeAddRoom" prefHeight="30.0" prefWidth="30.0" text=" ">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXTextField fx:id="txt_addr_name" labelFloat="true" layoutX="25.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Tên phòng" />
+                        <JFXPasswordField fx:id="txt_addr_password" labelFloat="true" layoutX="25.0" layoutY="240.0" prefHeight="25.0" prefWidth="200.0" promptText="Mật khẩu" />
+                        <JFXButton fx:id="btn_add_room" buttonType="RAISED" layoutX="85.0" layoutY="314.0" onAction="#addRoom" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #0077cc;" text="Thêm" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="lb_mes_room" layoutX="25.0" layoutY="94.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" wrapText="true" />
+                        <Label layoutX="25.0" layoutY="22.0" prefHeight="17.0" prefWidth="151.0" text="Thêm phòng">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="cb_room" layoutX="25.0" layoutY="140.0" prefHeight="25.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

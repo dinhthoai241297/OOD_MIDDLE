@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdt.ood.controllers.OutRoomController">
+   <children>
+      <TableView fx:id="tv_room" prefHeight="300.0" prefWidth="770.0">
+        <columns>
+          <TableColumn fx:id="tc_id_room" prefWidth="114.0" resizable="false" text="ID phòng" />
+          <TableColumn fx:id="tc_name_room" prefWidth="281.0" resizable="false" text="Tên phòng" />
+            <TableColumn fx:id="tc_type_room" prefWidth="220.0" resizable="false" text="Loại phòng" />
+            <TableColumn fx:id="tc_owner_room" prefWidth="154.0" resizable="false" text="Chủ phòng" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+   </children>
+</AnchorPane>

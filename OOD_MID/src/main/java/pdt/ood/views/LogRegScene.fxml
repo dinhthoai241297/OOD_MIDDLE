@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdt.ood.controllers.LogRegController">
+   <children>
+      <ImageView fitHeight="250.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../img/background_RegLog.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lb_app" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="41.0" opacity="0.0" prefHeight="47.0" prefWidth="201.0" text="APPLICATION" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="41.0">
+         <font>
+            <Font name="Broadway" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_pdt" alignment="CENTER" contentDisplay="CENTER" layoutX="-201.0" layoutY="88.0" opacity="0.7" prefHeight="17.0" prefWidth="200.0" text="pdt.ood.middle" textAlignment="CENTER" textFill="#d7d7d7" wrapText="true" AnchorPane.topAnchor="88.0">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="sp_rec" arcHeight="5.0" arcWidth="5.0" fill="#ff5300" height="5.0" layoutX="25.0" layoutY="170.0" stroke="#ff5300" strokeType="INSIDE" width="125.0" />
+      <FlowPane layoutY="135.0" prefHeight="40.0" prefWidth="350.0">
+         <children>
+            <JFXButton fx:id="btn_LoadLog" onAction="#loadUILog" prefHeight="40.0" prefWidth="175.0" text="Đăng nhập" textFill="#d3f0ff">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btn_LoadReg" onAction="#loadUIReg" prefHeight="40.0" prefWidth="175.0" text="Đăng ký" textFill="#d3f0ff">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </FlowPane>
+      <AnchorPane fx:id="ap_main" layoutY="175.0" prefHeight="375.0" prefWidth="700.0">
+         <children>
+            <AnchorPane prefHeight="375.0" prefWidth="350.0">
+               <children>
+                  <Circle fill="#53d06c" layoutX="86.0" layoutY="54.0" opacity="0.3" radius="40.0" stroke="#727272" strokeType="INSIDE" />
+                  <Circle fill="#5fa9ee" layoutX="46.0" layoutY="267.0" radius="15.0" stroke="#797979" strokeType="INSIDE" />
+                  <Circle fill="#ffec5e" layoutX="248.0" layoutY="140.0" opacity="0.68" radius="22.0" stroke="#a4a4a4" strokeType="INSIDE" />
+                  <Arc fill="#ff5656" layoutX="282.0" layoutY="323.0" length="270.0" opacity="0.51" radiusX="12.0" radiusY="10.0" startAngle="45.0" stroke="#949494" strokeType="INSIDE" style="-fx-rotate: 30;" type="ROUND" />
+                  <Arc fill="#a04dff" layoutX="303.0" layoutY="329.0" length="270.0" opacity="0.2" radiusX="16.0" radiusY="14.0" startAngle="45.0" stroke="#909090" strokeType="INSIDE" style="-fx-rotate: 230;" type="ROUND" />
+                  <Label alignment="CENTER" layoutX="69.0" layoutY="45.0" prefHeight="30.0" prefWidth="215.0" text="Đăng nhập vào hệ thống" textFill="#ff5300">
+                     <font>
+                        <Font name="Rockwell" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="75.0" layoutY="73.0" prefHeight="5.0" prefWidth="200.0" />
+                  <Label fx:id="lb_Mes_Log" alignment="CENTER" layoutX="25.0" layoutY="88.0" prefHeight="17.0" prefWidth="300.0" textFill="#fc2a2a" />
+                  <JFXTextField fx:id="txt_Log_Username" labelFloat="true" layoutX="59.0" layoutY="136.0" prefHeight="25.0" prefWidth="233.0" promptText="Tài khoản">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="txt_Log_Password" labelFloat="true" layoutX="59.0" layoutY="192.0" prefHeight="25.0" prefWidth="233.0" promptText="Mật khẩu">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="btn_Log" buttonType="RAISED" layoutX="126.0" layoutY="267.0" onAction="#login" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #2c43e8;" text="Đăng nhập" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="353.0" prefHeight="375.0" prefWidth="350.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#47fc8f" height="56.0" layoutX="22.0" layoutY="60.0" opacity="0.74" stroke="#949494" strokeType="INSIDE" style="-fx-rotate: 50;" width="107.0" />
+                  <Circle fill="#ff3333" layoutX="250.0" layoutY="180.0" radius="14.0" stroke="#6f6f6f" strokeType="INSIDE" />
+                  <Circle fill="#ff63d5" layoutX="115.0" layoutY="285.0" opacity="0.3" radius="55.0" stroke="#7c7c7c" strokeType="INSIDE" />
+                  <Label alignment="CENTER" layoutX="89.0" layoutY="45.0" prefHeight="30.0" prefWidth="175.0" text="Đăng ký tài khoản" textAlignment="CENTER" textFill="#ff5300">
+                     <font>
+                        <Font name="Rockwell" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="75.0" layoutY="73.0" prefHeight="5.0" prefWidth="200.0" />
+                  <Label fx:id="lb_Mes_Reg" alignment="CENTER" layoutX="25.0" layoutY="88.0" prefHeight="17.0" prefWidth="300.0" textFill="#fc2a2a" />
+                  <JFXTextField fx:id="txt_Reg_Name" labelFloat="true" layoutX="60.0" layoutY="130.0" prefHeight="25.0" prefWidth="233.0" promptText="Họ và tên">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txt_Reg_Username" labelFloat="true" layoutX="60.0" layoutY="180.0" prefHeight="25.0" prefWidth="233.0" promptText="Tài khoản">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="txt_Reg_Password" labelFloat="true" layoutX="60.0" layoutY="230.0" prefHeight="25.0" prefWidth="233.0" promptText="Mật khẩu">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="btn_Reg" buttonType="RAISED" layoutX="125.0" layoutY="300.0" onAction="#register" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #2c43e8;" text="Đăng ký" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
